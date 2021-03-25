@@ -13,21 +13,28 @@ if (process.argv.length !== 4 ) {
   process.exit(1)
 }
 
-// Check if Directory existe 
-if (!fs.existsSync(process.argv[2])) { // Verification Direcotry si il existe
+// Check if fichier existe 2em argument 
+if (!fs.existsSync(process.argv[2])) { 
   console.log(`Error: ${process.argv[2]} does not exist`)
-  const op = readlineSync.question(chalk.yellow(`you want create file in new file ?`))
+  const op = readlineSync.question(chalk.yellow(`do you want create new file ?`))
+  fs.writeFileSync(process.argv[2], ' ', 'utf-8')
 }
 
-let coco = 'src.txt'
-if (fs.existsSync(coco)) { // Verification Direcotry si il existe
-  console.log(`Error: ${process.argv[2]} file exist`)
+
+//  let coco = 'src.txt'
+
+// if (fs.existsSync(coco)) { // Verification Directory si il existe
+//   console.log(`Error: ${process.argv[2]} file exist`)
+//   process.exit(1)
+// }
+
+// //creer le xx.txt et copie le new txt
+
+// fs.writeFileSync(coco, 'dst.txt') 
+if (fs.existsSync(process.argv[3])) {
+  console.log(`erreur ce fichier existe deja`)
   process.exit(1)
 }
-
-//creer le xx.txt et copie le new txt
-
-fs.writeFileSync(coco, 'dst.txt') 
 
 
 //lis le 2eme arg de la ligne de cmd node
