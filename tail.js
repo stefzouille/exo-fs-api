@@ -9,13 +9,20 @@ if (process.argv.length !== 3) {
   console.log('please enter one argument !')
   process.exit(1)
 }
+ // Check if fichier existe 2em argument 
+if (!fs.existsSync(process.argv[2])) { 
+  console.log(`Error: ${process.argv[2]} does not exist`)
+  const op = readlineSync.question(chalk.yellow(`do you want create new file ?`))
+  fs.writeFileSync(process.argv[2], ' ', 'utf-8')
+}
 
-// if (process.argv[2] === file.txt) {
-//   console.log('please enter .txt !')
-//   process.exit(1)
-// }
 
-txt = fs.readFileSync('./file.txt', 'utf-8')
+const fl = process.argv[2]
+txt = fs.readFileSync(process.argv[2], 'utf-8')
+
+console.log(txt)
 
 
-console.log(txt)         
+
+
+

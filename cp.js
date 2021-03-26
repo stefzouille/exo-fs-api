@@ -31,6 +31,8 @@ if (!fs.existsSync(process.argv[2])) {
 // //creer le xx.txt et copie le new txt
 
 // fs.writeFileSync(coco, 'dst.txt') 
+
+
 if (fs.existsSync(process.argv[3])) {
   console.log(`erreur ce fichier existe deja`)
   process.exit(1)
