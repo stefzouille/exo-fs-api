@@ -9,20 +9,18 @@
 
 const fs = require('fs')
 
-
-
-
-if (process.argv.length !== 5) {
+if (process.argv.length !== 3) {
   console.log(`usage: please enter one argument xxx.txt`)
   process.exit(1)
 }
 
-// //check verif file exist
-// if (!fs.existsSync(process.argv[2])) {
-//   console.log(`Error : ${process.argv[2]} does not exist`)
-//   process.exit(1)
-// }
+//check verif file exist
+if (!fs.existsSync(process.argv[2])) {
+  console.log(`Error : ${process.argv[2]} does not exist`)
+  process.exit(1)
+}
 let stats = fs.statSync(process.argv[2])
+//console.log(process.argv[2])
 
 if (!stats.isFile()) {
   console.log('babamal')

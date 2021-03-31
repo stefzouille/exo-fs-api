@@ -1,10 +1,6 @@
-// node tail.js file.txt
-// Affiche les 10 dernières lignes du fichier file.txt.
-// Gestion de l'erreur si pas le bon nombre d'arguments.
-// Gestion de l'erreur si file.txt n'existe pas.
-
 const fs = require('fs') 
 const path = `./${process.argv[2]}`
+let fileName = process.argv[2]
 
 //les test 
 if(process.argv.length !== 3){
@@ -18,11 +14,6 @@ if(!fs.existsSync(path)){
 }
 
 const txt = fs.readFileSync('file.txt','utf-8')
-const lineT = txt.split(`\n`)
-console.log(lineT.slice((lineT.length)-20))
 
-
-
-
-
-
+console.log(`${txt.split(`\n`).length} ${txt.split(` `).length} ${txt.length} ${fileName}`)
+© 2021 GitHub, Inc.
